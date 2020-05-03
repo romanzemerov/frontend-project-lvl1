@@ -4,7 +4,7 @@ import { randomInteger, isEven, getKeyByValue } from "./utils.js";
 let name = null;
 
 export const userIdentification = () => {
-  name = readlineSync.question("Your answer: ");
+  name = readlineSync.question("May I have your name? ");
   console.log(`Hello, ${name}!`);
 };
 
