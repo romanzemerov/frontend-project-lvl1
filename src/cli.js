@@ -76,5 +76,5 @@ export const processingUserAnswer = () => {
     getKeyByValue(answerToBollean, userAnswer) || userAnswer
   );
 
-  correctAnswersCount = 0;
+  process.exit();
 };
