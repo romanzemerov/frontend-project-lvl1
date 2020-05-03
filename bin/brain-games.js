@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import userIdentification from "../cli.js";
+
+import userIdentification from "../src/cli.js";
 
 console.log("Welcome to the Brain Games!");
 userIdentification();
