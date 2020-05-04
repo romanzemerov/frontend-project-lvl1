@@ -1,7 +1,7 @@
-import { userIdentification, getUserName } from "./userIdentification.js";
 import readlineSync from "readline-sync";
+import { userIdentification, getUserName } from "./userIdentification.js";
 
-export const initGame = (game) => {
+const initGame = (game) => {
   const CORRECT_ANSWERS_FOR_WIN = 3;
 
   const state = {
@@ -51,7 +51,7 @@ export const initGame = (game) => {
     printRoundMessage();
     getAnswer();
 
-    let isAnswerCorrect = game.processingUserAnswer(state.answer);
+    const isAnswerCorrect = game.processingUserAnswer(state.answer);
 
     if (!isAnswerCorrect) {
       break;
@@ -68,3 +68,5 @@ export const initGame = (game) => {
     printErrorMessage(game.getCorrectAnswer(), state.answer);
   }
 };
+
+export default initGame;
