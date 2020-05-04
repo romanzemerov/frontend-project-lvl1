@@ -6,10 +6,14 @@
 
 [![asciicast](https://asciinema.org/a/3fGRdR8cE6Cq1MxOoOvcra7Zt.svg)](https://asciinema.org/a/3fGRdR8cE6Cq1MxOoOvcra7Zt)
 
-## Запуск игры &laquo;Проверка на&nbsp;чётность&raquo;
+## Игра &laquo;Проверка на&nbsp;чётность&raquo;
 
 [![asciicast](https://asciinema.org/a/8LY0qABKdBXuuJQtgOK2J6gI1.svg)](https://asciinema.org/a/8LY0qABKdBXuuJQtgOK2J6gI1)
 
-## Запуск игры &laquo;Калькулятор&raquo;
+## Игра &laquo;Калькулятор&raquo;
 
 [![asciicast](https://asciinema.org/a/wtYspiNddfuoH6L0S6iM4x3OY.svg)](https://asciinema.org/a/wtYspiNddfuoH6L0S6iM4x3OY)
+
+## Игра &laquo;НОД&raquo;
+
+[![asciicast](https://asciinema.org/a/YO8w7GvLHgm0THTVrYTzxyhLu.svg)](https://asciinema.org/a/YO8w7GvLHgm0THTVrYTzxyhLu)
