@@ -21,3 +21,7 @@
 ## Игра &laquo;Арифметическая прогрессия&raquo;
 
 [![asciicast](https://asciinema.org/a/UIxN8ZJ4ufhY2bt3pPRTHLFW7.svg)](https://asciinema.org/a/UIxN8ZJ4ufhY2bt3pPRTHLFW7)
+
+## Игра &laquo;Простое ли число?&raquo;
+
+[![asciicast](https://asciinema.org/a/3V2T9kAr5xD3vOm1BkYMPrUIb.svg)](https://asciinema.org/a/3V2T9kAr5xD3vOm1BkYMPrUIb)
