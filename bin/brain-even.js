@@ -1,22 +1,6 @@
 #!/usr/bin/env node
 
-import {
-  userIdentification,
-  isUserWin,
-  generateQuestion,
-  getUserAnswer,
-  processingUserAnswer,
-  printCongratulations,
-} from "../src/cli.js";
+import { initGame } from "../src/index.js";
+import even from "../src/games/even.js";
 
-console.log(`Welcome to the Brain Games!`);
-userIdentification();
-console.log(`Answer "yes" if the number is even, otherwise answer "no".`);
-
-while (!isUserWin()) {
-  generateQuestion();
-  getUserAnswer();
-  processingUserAnswer();
-}
-
-printCongratulations();
+initGame(even);
