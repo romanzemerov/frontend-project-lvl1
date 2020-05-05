@@ -1,12 +1,13 @@
 import readlineSync from "readline-sync";
 
-let name = null;
+let name;
 
-export const getUserName = () => {
-  return name;
-};
+export const getUserName = () => name;
 
 export const userIdentification = () => {
-  name = readlineSync.question("May I have your name? ");
+  const DEFAULT_NAME = "Anonymous";
+
+  const userInput = readlineSync.question("May I have your name? ");
+  name = userInput.length !== 0 ? userInput : DEFAULT_NAME;
   console.log(`Hello, ${name}!`);
 };

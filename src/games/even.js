@@ -1,13 +1,16 @@
 import { getKeyByValue, isEven, randomInteger } from "../utils.js";
 
+const GENERATE_NUMBER_MIN = 0;
+const GENERATE_NUMBER_MAX = 100;
+
 const answerToBoolean = {
   yes: true,
   no: false,
 };
 
-let currentQuestionNumber = null;
-let correctAnswer = null;
-let userAnswer = null;
+let currentQuestionNumber;
+let correctAnswer;
+let userAnswer;
 
 const isCorrectAnswer = (num, answer) => {
   correctAnswer = isEven(num);
@@ -38,7 +41,10 @@ const getRules = () => {
 };
 
 const generateQuestion = () => {
-  currentQuestionNumber = randomInteger(0, 100);
+  currentQuestionNumber = randomInteger(
+    GENERATE_NUMBER_MIN,
+    GENERATE_NUMBER_MAX
+  );
   return currentQuestionNumber;
 };
 

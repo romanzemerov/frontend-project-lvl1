@@ -1,6 +1,9 @@
 import pairs from "@hexlet/pairs";
 import { randomInteger } from "../utils.js";
 
+const GENERATE_NUMBER_MIN = 0;
+const GENERATE_NUMBER_MAX = 100;
+
 let pair;
 let userAnswer;
 let correctAnswer;
@@ -31,7 +34,10 @@ const getRules = () => {
 };
 
 const generateQuestion = () => {
-  pair = pairs.cons(randomInteger(0, 100), randomInteger(0, 100));
+  pair = pairs.cons(
+    randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX),
+    randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX)
+  );
   return `${pairs.car(pair)} ${pairs.cdr(pair)}`;
 };
 

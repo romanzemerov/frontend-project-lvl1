@@ -1,5 +1,8 @@
 import { randomInteger } from "../utils.js";
 
+const GENERATE_NUMBER_MIN = 0;
+const GENERATE_NUMBER_MAX = 100;
+
 const PROGRESSION_LENGTH = 10;
 let userAnswer;
 let correctAnswer;
@@ -42,7 +45,7 @@ const getRules = () => {
 };
 
 const generateQuestion = () => {
-  const d = randomInteger(0, 100);
+  const d = randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX);
   hiddenNumberIndex = randomInteger(0, PROGRESSION_LENGTH - 1);
   progression = generateProgression(d, PROGRESSION_LENGTH);
   return generateProgressionString(progression);
