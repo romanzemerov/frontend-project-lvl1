@@ -1,5 +1,5 @@
 import readlineSync from "readline-sync";
-import { getUserName } from "./userIdentification.js";
+import { getUserName } from "./user-identification.js";
 
 const ROUNDS = 3;
 

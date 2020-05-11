@@ -1,4 +1,4 @@
-import { userIdentification } from "./userIdentification.js";
+import { userIdentification } from "./user-identification.js";
 import gameLoop from "./game-loop.js";
 
 const initGame = (game) => {
