@@ -6,7 +6,7 @@ const initGame = (game) => {
 
   userIdentification();
   console.log(`Welcome to the Brain Games!`);
-  console.log(`${getRules()}`);
+  console.log(getRules());
   gameLoop(game);
 };
 
