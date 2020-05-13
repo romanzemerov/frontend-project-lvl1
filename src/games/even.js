@@ -1,4 +1,4 @@
-import { getKeyByValue, isEven, randomInteger } from "../utils.js";
+import { getKeyByValue, randomInteger } from "../utils.js";
 
 const GENERATE_NUMBER_MIN = 0;
 const GENERATE_NUMBER_MAX = 100;
@@ -9,6 +9,8 @@ const answerToBoolean = {
 };
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (num) => num % 2 === 0;
 
 const getRound = () => {
   const question = randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX);

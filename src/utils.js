@@ -1,5 +1,3 @@
-export const isEven = (num) => num % 2 === 0;
-
 export const randomInteger = (min, max) =>
   Math.round(min - 0.5 + Math.random() * (max - min + 1));
 
