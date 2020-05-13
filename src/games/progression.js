@@ -2,12 +2,9 @@ import { randomInteger } from "../utils.js";
 
 const GENERATE_NUMBER_MIN = 0;
 const GENERATE_NUMBER_MAX = 100;
-
 const PROGRESSION_LENGTH = 10;
-let userAnswer;
-let correctAnswer;
-let progression;
-let hiddenNumberIndex;
+
+const rules = "What number is missing in the progression?";
 
 const generateProgression = (d, length) => {
   const PROGRESSION_SHIFT_MIN = 0;
@@ -23,49 +20,25 @@ const generateProgression = (d, length) => {
   return newProgression;
 };
 
-const generateProgressionString = (progressionArray) => {
-  return progressionArray
-    .map((number, i) => (i === hiddenNumberIndex ? ".." : number))
+const generateProgressionString = (array, hiddenIndex) => {
+  return array
+    .map((number, i) => (i === hiddenIndex ? ".." : number))
     .join(" ");
 };
 
-const normalizeUserAnswer = (answer) => Number(answer);
-
-const isCorrectAnswer = (answer) => {
-  correctAnswer = progression[hiddenNumberIndex];
-  return answer === correctAnswer;
-};
-
-const getWelcomeMessage = () => {
-  return "Welcome to the Brain Games!";
-};
-
-const getRules = () => {
-  return "Find the greatest common divisor of given numbers.";
-};
-
-const generateQuestion = () => {
+const getRound = () => {
   const d = randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX);
-  hiddenNumberIndex = randomInteger(0, PROGRESSION_LENGTH - 1);
-  progression = generateProgression(d, PROGRESSION_LENGTH);
-  return generateProgressionString(progression);
-};
+  const hiddenNumberIndex = randomInteger(0, PROGRESSION_LENGTH - 1);
+  const progression = generateProgression(d, PROGRESSION_LENGTH);
+  const question = generateProgressionString(progression, hiddenNumberIndex);
+  const correctAnswer = String(progression[hiddenNumberIndex]);
 
-const getCorrectAnswer = () => {
-  return correctAnswer;
-};
-
-const processingUserAnswer = (answer) => {
-  userAnswer = normalizeUserAnswer(answer);
-  return isCorrectAnswer(userAnswer);
+  return { question, correctAnswer };
 };
 
 const gameData = {
-  getWelcomeMessage,
-  getRules,
-  generateQuestion,
-  getCorrectAnswer,
-  processingUserAnswer,
+  rules,
+  getRound,
 };
 
 export default gameData;

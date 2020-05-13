@@ -3,70 +3,42 @@ import { randomInteger } from "../utils.js";
 
 const GENERATE_NUMBER_MIN = 0;
 const GENERATE_NUMBER_MAX = 100;
-
 const OPERATIONS = ["+", "-", "*"];
-let pair;
-let sign;
-let userAnswer;
-let correctAnswer;
 
-const normalizeUserAnswer = (answer) => Number(answer);
+const rules = "What is the result of the expression?";
 
-const isCorrectAnswer = (answer) => {
+const calc = (pair, sign) => {
   switch (sign) {
     case "+": {
-      correctAnswer = pairs.car(pair) + pairs.cdr(pair);
-      break;
+      return pairs.car(pair) + pairs.cdr(pair);
     }
     case "-": {
-      correctAnswer = pairs.car(pair) - pairs.cdr(pair);
-      break;
+      return pairs.car(pair) - pairs.cdr(pair);
     }
     case "*": {
-      correctAnswer = pairs.car(pair) * pairs.cdr(pair);
-      break;
+      return pairs.car(pair) * pairs.cdr(pair);
     }
     default: {
       throw new Error("Incorrect operation");
     }
   }
-
-  return correctAnswer === answer;
 };
 
-const getWelcomeMessage = () => {
-  return "Welcome to the Brain Games!";
-};
-
-const getRules = () => {
-  return "What is the result of the expression?";
-};
-
-const generateQuestion = () => {
-  pair = pairs.cons(
+const getRound = () => {
+  const pair = pairs.cons(
     randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX),
     randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX)
   );
-  sign = OPERATIONS[randomInteger(0, OPERATIONS.length - 1)];
+  const sign = OPERATIONS[randomInteger(0, OPERATIONS.length - 1)];
+  const question = `${pairs.car(pair)} ${sign} ${pairs.cdr(pair)}`;
+  const correctAnswer = String(calc(pair, sign));
 
-  return `${pairs.car(pair)} ${sign} ${pairs.cdr(pair)}`;
-};
-
-const getCorrectAnswer = () => {
-  return correctAnswer;
-};
-
-const processingUserAnswer = (answer) => {
-  userAnswer = normalizeUserAnswer(answer);
-  return isCorrectAnswer(userAnswer);
+  return { question, correctAnswer };
 };
 
 const gameData = {
-  getWelcomeMessage,
-  getRules,
-  generateQuestion,
-  getCorrectAnswer,
-  processingUserAnswer,
+  rules,
+  getRound,
 };
 
 export default gameData;

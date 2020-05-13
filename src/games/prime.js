@@ -8,9 +8,7 @@ const answerToBoolean = {
   no: false,
 };
 
-let currentQuestionNumber;
-let correctAnswer;
-let userAnswer;
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -28,57 +26,16 @@ const isPrime = (num) => {
   return true;
 };
 
-const isCorrectAnswer = (num, answer) => {
-  correctAnswer = isPrime(num);
+const getRound = () => {
+  const question = randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX);
+  const correctAnswer = getKeyByValue(answerToBoolean, isPrime(question));
 
-  if (typeof answer === "boolean") {
-    if (answer === correctAnswer) {
-      return true;
-    }
-  }
-
-  return false;
-};
-
-const normalizeUserAnswer = (answer) => {
-  if (answer in answerToBoolean) {
-    return answerToBoolean[answer];
-  }
-
-  return answer;
-};
-
-const getWelcomeMessage = () => {
-  return "Welcome to the Brain Games!";
-};
-
-const getRules = () => {
-  return 'Answer "yes" if given number is prime. Otherwise answer "no".';
-};
-
-const generateQuestion = () => {
-  currentQuestionNumber = randomInteger(
-    GENERATE_NUMBER_MIN,
-    GENERATE_NUMBER_MAX
-  );
-  return currentQuestionNumber;
-};
-
-const getCorrectAnswer = () => {
-  return getKeyByValue(answerToBoolean, correctAnswer);
-};
-
-const processingUserAnswer = (answer) => {
-  userAnswer = normalizeUserAnswer(answer);
-  return isCorrectAnswer(currentQuestionNumber, userAnswer);
+  return { question, correctAnswer };
 };
 
 const gameData = {
-  getWelcomeMessage,
-  getRules,
-  generateQuestion,
-  getCorrectAnswer,
-  processingUserAnswer,
+  rules,
+  getRound,
 };
 
 export default gameData;
