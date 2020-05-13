@@ -1,7 +1,7 @@
 import { randomInteger } from '../utils.js';
 
-const GENERATE_NUMBER_MIN = 0;
-const GENERATE_NUMBER_MAX = 100;
+const NUMBER_MIN = 0;
+const NUMBER_MAX = 100;
 const PROGRESSION_LENGTH = 10;
 
 const rules = 'What number is missing in the progression?';
@@ -27,7 +27,7 @@ const generateProgressionString = (array, hiddenIndex) => {
 };
 
 const getRound = () => {
-  const d = randomInteger(GENERATE_NUMBER_MIN, GENERATE_NUMBER_MAX);
+  const d = randomInteger(NUMBER_MIN, NUMBER_MAX);
   const hiddenNumberIndex = randomInteger(0, PROGRESSION_LENGTH - 1);
   const progression = generateProgression(d, PROGRESSION_LENGTH);
   const question = generateProgressionString(progression, hiddenNumberIndex);
