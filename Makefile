@@ -5,7 +5,7 @@ lint:
 	npx eslint .
 
 pretty:
-	npx prettier --write .
+	npx prettier --write src/**/*.js bin/**/*.js
 
 publish:
 	npm publish --dry-run
