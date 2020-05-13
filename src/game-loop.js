@@ -1,4 +1,4 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 const ROUNDS_COUNT = 3;
 
@@ -8,14 +8,14 @@ const gameLoop = (getRound, getCongratulations, getErrorMessage) => {
 
     console.log(`Question: ${question}`);
 
-    const answer = readlineSync.question("Your answer: ");
+    const answer = readlineSync.question('Your answer: ');
 
     if (answer !== correctAnswer) {
       console.log(getErrorMessage(correctAnswer, answer));
       return;
     }
 
-    console.log("Correct!");
+    console.log('Correct!');
   }
 
   console.log(getCongratulations());

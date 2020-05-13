@@ -1,24 +1,24 @@
-import { randomInteger } from "../utils.js";
+import { randomInteger } from '../utils.js';
 
 const OPERAND_MIN = 0;
 const OPERAND_MAX = 100;
-const OPERATIONS = ["+", "-", "*"];
+const OPERATIONS = ['+', '-', '*'];
 
-const rules = "What is the result of the expression?";
+const rules = 'What is the result of the expression?';
 
 const calc = ({ first, second }, sign) => {
   switch (sign) {
-    case "+": {
+    case '+': {
       return first + second;
     }
-    case "-": {
+    case '-': {
       return first - second;
     }
-    case "*": {
+    case '*': {
       return first * second;
     }
     default: {
-      throw new Error("Incorrect operation");
+      throw new Error('Incorrect operation');
     }
   }
 };

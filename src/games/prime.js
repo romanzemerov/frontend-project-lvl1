@@ -1,4 +1,4 @@
-import { getKeyByValue, randomInteger } from "../utils.js";
+import { getKeyByValue, randomInteger } from '../utils.js';
 
 const GENERATE_NUMBER_MIN = 0;
 const GENERATE_NUMBER_MAX = 100;

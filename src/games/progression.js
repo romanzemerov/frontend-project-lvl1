@@ -1,10 +1,10 @@
-import { randomInteger } from "../utils.js";
+import { randomInteger } from '../utils.js';
 
 const GENERATE_NUMBER_MIN = 0;
 const GENERATE_NUMBER_MAX = 100;
 const PROGRESSION_LENGTH = 10;
 
-const rules = "What number is missing in the progression?";
+const rules = 'What number is missing in the progression?';
 
 const generateProgression = (d, length) => {
   const PROGRESSION_SHIFT_MIN = 0;
@@ -22,8 +22,8 @@ const generateProgression = (d, length) => {
 
 const generateProgressionString = (array, hiddenIndex) => {
   return array
-    .map((number, i) => (i === hiddenIndex ? ".." : number))
-    .join(" ");
+    .map((number, i) => (i === hiddenIndex ? '..' : number))
+    .join(' ');
 };
 
 const getRound = () => {
