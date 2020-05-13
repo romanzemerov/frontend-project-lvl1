@@ -3,13 +3,15 @@
     "node": true,
     "es6": true
   },
-  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
+  "plugins": ["prettier"],
   "rules": {
     "no-console": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "prettier/prettier": "error"
   }
 }
