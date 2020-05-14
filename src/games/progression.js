@@ -6,7 +6,7 @@ const PROGRESSION_LENGTH = 10;
 
 const rules = 'What number is missing in the progression?';
 
-const generateProgression = (d, length) => {
+const generateProgression = (step, length) => {
   const PROGRESSION_SHIFT_MIN = 0;
   const PROGRESSION_SHIFT_MAX = 10;
 
@@ -14,7 +14,7 @@ const generateProgression = (d, length) => {
   const shift = randomInteger(PROGRESSION_SHIFT_MIN, PROGRESSION_SHIFT_MAX);
 
   for (let i = 1; i <= length; i += 1) {
-    newProgression.push(i * d + shift);
+    newProgression.push(i * step + shift);
   }
 
   return newProgression;
@@ -27,9 +27,9 @@ const generateProgressionString = (array, hiddenIndex) => {
 };
 
 const getRound = () => {
-  const d = randomInteger(NUMBER_MIN, NUMBER_MAX);
   const hiddenNumberIndex = randomInteger(0, PROGRESSION_LENGTH - 1);
-  const progression = generateProgression(d, PROGRESSION_LENGTH);
+  const progressionStep = randomInteger(NUMBER_MIN, NUMBER_MAX);
+  const progression = generateProgression(progressionStep, PROGRESSION_LENGTH);
   const question = generateProgressionString(progression, hiddenNumberIndex);
   const correctAnswer = String(progression[hiddenNumberIndex]);
 
