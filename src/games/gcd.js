@@ -16,13 +16,11 @@ const gcd = (firstNumber, secondNumber) => {
 };
 
 const getRound = () => {
-  const numbers = {
-    first: randomInteger(NUMBER_MIN, NUMBER_MAX),
-    second: randomInteger(NUMBER_MIN, NUMBER_MAX),
-  };
+  const questionFirstNumber = randomInteger(NUMBER_MIN, NUMBER_MAX);
+  const questionSecondNumber = randomInteger(NUMBER_MIN, NUMBER_MAX);
 
-  const question = `${numbers.first} ${numbers.second}`;
-  const correctAnswer = String(gcd(numbers.first, numbers.second));
+  const question = `${questionFirstNumber} ${questionSecondNumber}`;
+  const correctAnswer = String(gcd(questionFirstNumber, questionSecondNumber));
 
   return { question, correctAnswer };
 };
