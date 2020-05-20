@@ -3,7 +3,7 @@ import gameLoop from './game-loop.js';
 
 const DEFAULT_NAME = 'Anonymous';
 
-const initGame = ({ rules, getRound }) => {
+const initGame = ({ task, getRound }) => {
   let name;
 
   const getCongratulations = () => `Congratulations, ${name}!`;
@@ -16,7 +16,7 @@ const initGame = ({ rules, getRound }) => {
 
   console.log(`Hello, ${name}!`);
   console.log('Welcome to the Brain Games!');
-  console.log(rules);
+  console.log(task);
 
   gameLoop(getRound, getCongratulations, getErrorMessage);
 };

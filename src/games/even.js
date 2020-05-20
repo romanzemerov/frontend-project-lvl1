@@ -8,7 +8,7 @@ const answerToBoolean = {
   no: false,
 };
 
-const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
@@ -20,7 +20,7 @@ const getRound = () => {
 };
 
 const gameData = {
-  rules,
+  task,
   getRound,
 };
 

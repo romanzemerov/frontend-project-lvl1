@@ -4,7 +4,7 @@ const NUMBER_MIN = 0;
 const NUMBER_MAX = 100;
 const PROGRESSION_LENGTH = 10;
 
-const rules = 'What number is missing in the progression?';
+const task = 'What number is missing in the progression?';
 
 const generateProgression = (step, length) => {
   const PROGRESSION_SHIFT_MIN = 0;
@@ -37,7 +37,7 @@ const getRound = () => {
 };
 
 const gameData = {
-  rules,
+  task,
   getRound,
 };
 

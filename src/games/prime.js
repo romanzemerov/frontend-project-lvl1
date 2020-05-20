@@ -8,7 +8,7 @@ const answerToBoolean = {
   no: false,
 };
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num <= 1) {
@@ -34,7 +34,7 @@ const getRound = () => {
 };
 
 const gameData = {
-  rules,
+  task,
   getRound,
 };
 

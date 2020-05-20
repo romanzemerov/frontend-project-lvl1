@@ -4,7 +4,7 @@ const OPERAND_MIN = 0;
 const OPERAND_MAX = 100;
 const OPERATIONS = ['+', '-', '*'];
 
-const rules = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
 
 const calc = ({ first, second }, sign) => {
   switch (sign) {
@@ -37,7 +37,7 @@ const getRound = () => {
 };
 
 const gameData = {
-  rules,
+  task,
   getRound,
 };
 

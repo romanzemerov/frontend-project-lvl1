@@ -3,7 +3,7 @@ import { randomInteger } from '../utils.js';
 const NUMBER_MIN = 0;
 const NUMBER_MAX = 100;
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const task = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (firstNumber, secondNumber) => {
   const mod = firstNumber % secondNumber;
@@ -28,7 +28,7 @@ const getRound = () => {
 };
 
 const gameData = {
-  rules,
+  task,
   getRound,
 };
 
