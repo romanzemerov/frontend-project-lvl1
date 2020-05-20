@@ -1,4 +1,4 @@
-import { randomInteger } from '../utils.js';
+import randomInteger from '../utils.js';
 
 const OPERAND_MIN = 0;
 const OPERAND_MAX = 100;
