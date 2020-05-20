@@ -1,24 +1,5 @@
-import readlineSync from 'readline-sync';
-import gameLoop from './game-loop.js';
+import gameEngine from './game-engine.js';
 
-const DEFAULT_NAME = 'Anonymous';
-
-const initGame = ({ task, getRound }) => {
-  let name;
-
-  const getCongratulations = () => `Congratulations, ${name}!`;
-
-  const getErrorMessage = (correctAnswer, wrongAnswer) =>
-    `${wrongAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`;
-
-  const userInput = readlineSync.question('May I have your name? ');
-  name = userInput.length !== 0 ? userInput : DEFAULT_NAME;
-
-  console.log(`Hello, ${name}!`);
-  console.log('Welcome to the Brain Games!');
-  console.log(task);
-
-  gameLoop(getRound, getCongratulations, getErrorMessage);
-};
+const initGame = ({ task, getRound }) => gameEngine(task, getRound);
 
 export default initGame;
