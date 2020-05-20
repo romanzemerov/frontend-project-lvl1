@@ -6,7 +6,7 @@ const OPERATIONS = ['+', '-', '*'];
 
 const task = 'What is the result of the expression?';
 
-const calc = ({ first, second }, sign) => {
+const calc = (first, second, sign) => {
   switch (sign) {
     case '+': {
       return first + second;
@@ -24,14 +24,12 @@ const calc = ({ first, second }, sign) => {
 };
 
 const getRound = () => {
-  const operands = {
-    first: randomInteger(OPERAND_MIN, OPERAND_MAX),
-    second: randomInteger(OPERAND_MIN, OPERAND_MAX),
-  };
-
+  const firstOperand = randomInteger(OPERAND_MIN, OPERAND_MAX);
+  const secondOperand = randomInteger(OPERAND_MIN, OPERAND_MAX);
   const sign = OPERATIONS[randomInteger(0, OPERATIONS.length - 1)];
-  const question = `${operands.first} ${sign} ${operands.second}`;
-  const correctAnswer = String(calc(operands, sign));
+
+  const question = `${firstOperand} ${sign} ${secondOperand}`;
+  const correctAnswer = String(calc(firstOperand, secondOperand, sign));
 
   return { question, correctAnswer };
 };
