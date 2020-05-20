@@ -7,12 +7,7 @@ const task = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (firstNumber, secondNumber) => {
   const mod = firstNumber % secondNumber;
-
-  if (mod === 0) {
-    return secondNumber;
-  }
-
-  return gcd(secondNumber, mod);
+  return mod === 0 ? secondNumber : gcd(secondNumber, mod);
 };
 
 const getRound = () => {
